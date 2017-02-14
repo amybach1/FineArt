@@ -1,0 +1,16 @@
+body {
+    padding-top:55px;
+    padding-bottom: 40px;
+    background-color: #f0f8ff;
+}
+
+p {
+padding:5px;
+color:#A9A9A9;
+}
+
+h1
+{
+font-family: 'Sansita', sans-serif;
+font-weight:bold;
+}
