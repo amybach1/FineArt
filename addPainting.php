@@ -5,14 +5,23 @@ include 'dbConnection.php';
 $title = $_POST['title'];
 $Painter_ID = $_POST['Painter_ID'];
 $type = $_POST['type'];
+$style = $_POST['style'];
 
-$sql = "INSERT INTO Paintings (title, Painter_ID, type)
-  VALUES ('$title', '$Painter_ID', '$type')";
+if (isset($_POST['Painting_ID'])) {
+    $Painting_ID = $_POST['Painting_ID'];
+    $sql =  "UPDATE Paintings SET title='$title', style='$style', type = '$type', 
+             Painter_ID='$Painter_ID'
+             WHERE id = $Painting_ID";
+}             
+else {
+    $sql = "INSERT INTO Paintings (title, Painter_ID, type, style)
+  VALUES ('$title', '$Painter_ID', '$type', '$style')";
+}  
 
 include 'head.php';
 
  if ($conn->query($sql) === TRUE) {
-          echo "<h2 class='form-signin-heading''>You have successfully added a painting to the database!</h2> <br>";
+          echo "<h2 class='form-signin-heading''>Success!</h2> <br>";
       } else {
           echo "Error: " . $sql . "<br>" . $conn->error;
       }
@@ -22,8 +31,7 @@ include 'head.php';
       Painting: <?php echo $title ?><br>
       Type: <?php echo $type ?><br>
       Painter: <?php echo $Painter_ID ?><br>
+      Style: <?php echo $style ?> <br>
 
       </div>
-    </div>
-  </body>
-</html>
+        <?php include 'foot.php' ?>

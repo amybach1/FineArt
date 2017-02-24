@@ -11,8 +11,10 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="painterForm.php">Add Painter</a></li>
-        <li><a href="paintingForm.php">Add Painting</a></li>
+        <li><a href="painters.php">Painters</a> </li>
+        <li><a href="paintings.php">Paintings</a> </li>
+        <li><a href="painterForm.php">Enter Painter</a></li>
+        <li><a href="paintingForm.php">Enter Painting</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
